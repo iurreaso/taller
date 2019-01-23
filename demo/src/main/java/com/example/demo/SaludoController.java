@@ -21,13 +21,19 @@ public class SaludoController {
     	
     	this.logger.info("Esto es un mensaje de información");
     	
-    	if (name.equals("pepe")) {
+    
+    
+    long id = counter.incrementAndGet();
+	if (id%2 == 0) {
+		if (name.equals("pepe")) {
     		this.logger.info("Entra al IF de pepe");
     		return new Saludo(1,
                     String.format(template, name));
     	}
-        return new Saludo(counter.incrementAndGet(),
-                            String.format(template, name));
-    }
 
+		return new Saludo(id,
+	                        String.format(template, name));
+	}
+	return new Saludo(id,"nada");
+    }
 }
