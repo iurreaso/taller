@@ -22,6 +22,7 @@ public class SaludoController {
     	this.logger.info("Esto es un mensaje de información");
     	
     	if (name.equals("pepe")) {
+    		this.logger.info("Entra al IF de pepe");
     		return new Saludo(1,
                     String.format(template, name));
     	}
