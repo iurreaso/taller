@@ -14,8 +14,11 @@ public class SaludoController {
 
     @RequestMapping("/saludo")
     public Saludo greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return new Saludo(counter.incrementAndGet(),
-                            String.format(template, name));
+    	if(name="vicente") {
+            return new Saludo(counter.incrementAndGet(),
+                    String.format(template, name));		
+    	}
+
     }
 
 }
